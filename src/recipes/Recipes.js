@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react'
+import { NavLink } from 'react-router-dom'
 
 import axios from 'axios'
 import apiUrl from '../apiConfig'
@@ -42,6 +43,7 @@ class Recipes extends Component {
 
     return (
       <Fragment>
+        <NavLink to='/create-recipe'>New Recipe</NavLink>
         <h2>Recipes:</h2>
         <ul>
           {this.state.recipes.map(recipe => (
