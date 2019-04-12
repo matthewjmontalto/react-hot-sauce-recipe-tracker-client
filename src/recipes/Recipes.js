@@ -1,10 +1,8 @@
 import React, { Component, Fragment } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 
 import axios from 'axios'
 import apiUrl from '../apiConfig'
-
-// import { Link } from 'react-router-dom'
 // import spinner component from react bootstrap
 
 class Recipes extends Component {
@@ -48,7 +46,7 @@ class Recipes extends Component {
         <ul>
           {this.state.recipes.map(recipe => (
             <li key={recipe.id}>
-              {recipe.name}
+              <Link to={'/recipes/' + recipe.id}>{recipe.name}</Link>
             </li>
           ))}
         </ul>
