@@ -12,6 +12,7 @@ import ChangePassword from './auth/components/ChangePassword'
 import Recipes from './recipes/Recipes.js'
 import CreateRecipe from './recipes/CreateRecipe.js'
 import Recipe from './recipes/Recipe.js'
+import RecipeEdit from './recipes/RecipeEdit.js'
 
 import Alert from 'react-bootstrap/Alert'
 
@@ -63,14 +64,14 @@ class App extends Component {
           <AuthenticatedRoute user={user} exact path='/recipes' render={() => (
             <Recipes alert={this.alert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/create-recipe' render={() => (
+          <AuthenticatedRoute user={user} exact path='/create-recipe' render={() => (
             <CreateRecipe alert={this.alert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/recipes/:id' render={(props) => (
+          <AuthenticatedRoute user={user} exact path='/recipes/:id' render={(props) => (
             <Recipe alert={this.alert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/recipes/:id/edit' render={(props) => (
-            <Recipe alert={this.alert} user={user} />
+          <AuthenticatedRoute user={user} exact path='/recipes/:id/edit' render={(props) => (
+            <RecipeEdit alert={this.alert} user={user} />
           )} />
         </main>
       </React.Fragment>

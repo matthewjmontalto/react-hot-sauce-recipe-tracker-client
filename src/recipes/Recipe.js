@@ -64,7 +64,7 @@ class Recipe extends Component {
         <p>Name: {name}</p>
         <p>Date: {date}</p>
         <p>Rating: {rating}</p>
-        <p>fermented? {fermented}</p>
+        <p>fermented? {fermented ? 'yes' : 'no'}</p>
         <p>ingredients: {ingredients}</p>
         <p>notes: {notes}</p>
         <button key={id} onClick={this.handleOnDelete}>Delete</button>
